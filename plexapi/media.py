@@ -754,6 +754,16 @@ class SearchResult(PlexObject):
         self.score = cast(int, data.attrib.get('score'))
         self.year = data.attrib.get('year')
 
+@utils.registerPlexObject
+class Guid(MediaTag):
+    """ Represents a single Guid media tag.
+
+        Attributes:
+            TAG (str): 'Guid'
+            FILTER (str): 'Guid'
+    """
+    TAG = 'Guid'
+    FILTER = 'guid'
 
 @utils.registerPlexObject
 class Agent(PlexObject):

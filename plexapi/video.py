@@ -260,7 +260,7 @@ class Movie(Playable, Video):
             chapterSource (str): Chapter source (agent; media; mixed).
             contentRating (str) Content rating (PG-13; NR; TV-G).
             duration (int): Duration of movie in milliseconds.
-            guid: Plex GUID (com.plexapp.agents.imdb://tt4302938?lang=en).
+            guid (List<:class:`~plexapi.media.Guid`>): List of Guid objects.
             originalTitle (str): Original title, often the foreign title (転々; 엽기적인 그녀).
             originallyAvailableAt (datetime): Datetime movie was released.
             primaryExtraKey (str) Primary extra key (/library/metadata/66351).
@@ -302,7 +302,7 @@ class Movie(Playable, Video):
         self.chapterSource = data.attrib.get('chapterSource')
         self.contentRating = data.attrib.get('contentRating')
         self.duration = utils.cast(int, data.attrib.get('duration'))
-        self.guid = data.attrib.get('guid')
+        self.guid = self.findItems(data, media.Guid)
         self.originalTitle = data.attrib.get('originalTitle')
         self.originallyAvailableAt = utils.toDatetime(
             data.attrib.get('originallyAvailableAt'), '%Y-%m-%d')
