@@ -760,10 +760,12 @@ class Guid(MediaTag):
 
         Attributes:
             TAG (str): 'Guid'
-            FILTER (str): 'Guid'
     """
     TAG = 'Guid'
-    FILTER = 'guid'
+    
+    def _loadData(self, data):
+        self._data = data
+        self.id = cast(int, data.attrib.get('id', 0))
 
 @utils.registerPlexObject
 class Agent(PlexObject):
