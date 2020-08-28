@@ -760,8 +760,10 @@ class Guid(PlexObject):
 
         Attributes:
             TAG (str): 'Guid'
+            FILTER (str): 'guid'
     """
     TAG = 'Guid'
+    FILTER = 'guid'
     
     def _loadData(self, data):
         self._data = data
