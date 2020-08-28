@@ -769,6 +769,7 @@ class Guid(PlexObject):
         self._data = data
         self.id = data.attrib.get('id')
         self.filter = 'guid=' + self.id
+        self.tag = 'Guid'
 
 @utils.registerPlexObject
 class Agent(PlexObject):
