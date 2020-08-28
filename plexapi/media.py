@@ -768,6 +768,7 @@ class Guid(PlexObject):
     def _loadData(self, data):
         self._data = data
         self.id = data.attrib.get('id')
+        self.filter = 'guid=' + self.id
 
 @utils.registerPlexObject
 class Agent(PlexObject):
