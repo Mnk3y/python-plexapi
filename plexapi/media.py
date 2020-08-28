@@ -755,8 +755,8 @@ class SearchResult(PlexObject):
         self.year = data.attrib.get('year')
 
 @utils.registerPlexObject
-class Guid(MediaTag):
-    """ Represents a single Guid media tag.
+class Guid(PlexObject):
+    """ Represents a single Guid.
 
         Attributes:
             TAG (str): 'Guid'
@@ -765,7 +765,7 @@ class Guid(MediaTag):
     
     def _loadData(self, data):
         self._data = data
-        self.id = cast(int, data.attrib.get('id', 0))
+        self.id = data.attrib.get('id')
 
 @utils.registerPlexObject
 class Agent(PlexObject):
