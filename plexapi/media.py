@@ -755,8 +755,8 @@ class SearchResult(PlexObject):
         self.year = data.attrib.get('year')
 
 @utils.registerPlexObject
-class Guid(PlexObject):
-    """ Represents a single Guid.
+class Guid(MediaTag):
+    """ Represents a single Guid media tag.
 
         Attributes:
             TAG (str): 'Guid'
