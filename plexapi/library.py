@@ -753,7 +753,7 @@ class MovieSection(LibrarySection):
         Attributes:
             ALLOWED_FILTERS (list<str>): List of allowed search filters. ('unwatched',
                 'duplicate', 'year', 'decade', 'genre', 'contentRating', 'collection',
-                'director', 'actor', 'country', 'studio', 'resolution', 'guid', 'label')
+                'director', 'actor', 'country', 'studio', 'resolution', 'guid', 'guids', 'label')
             ALLOWED_SORT (list<str>): List of allowed sorting keys. ('addedAt',
                 'originallyAvailableAt', 'lastViewedAt', 'titleSort', 'rating',
                 'mediaHeight', 'duration')
@@ -762,7 +762,7 @@ class MovieSection(LibrarySection):
     """
     ALLOWED_FILTERS = ('unwatched', 'duplicate', 'year', 'decade', 'genre', 'contentRating',
                        'collection', 'director', 'actor', 'country', 'studio', 'resolution',
-                       'guid', 'label', 'writer', 'producer', 'subtitleLanguage', 'audioLanguage',
+                       'guid', 'guids', 'label', 'writer', 'producer', 'subtitleLanguage', 'audioLanguage',
                        'lastViewedAt', 'viewCount', 'addedAt')
     ALLOWED_SORT = ('addedAt', 'originallyAvailableAt', 'lastViewedAt', 'titleSort', 'rating',
                     'mediaHeight', 'duration')
