@@ -755,21 +755,17 @@ class SearchResult(PlexObject):
         self.year = data.attrib.get('year')
 
 @utils.registerPlexObject
-class Guid(MediaTag):
-    """ Represents a single Guid media tag.
-
-        Attributes:
-            TAG (str): 'Guid'
-            FILTER (str): 'guid'
-    """
-    TAG = 'Guid'
-    FILTER = 'guid'
+class GuidTag(PlexObject):
+    """ Represents a single Guid.
     
+        Attributes:
+            id (id): Tag ID (Used as a unique id, except for Guid's, used for external systems
+                to plex identifiers, like imdb and tmdb).
+    """
+
     def _loadData(self, data):
         self._data = data
         self.id = data.attrib.get('id')
-        self.filter = 'guid=' + self.id
-        self.tag = 'Guid'
 
 @utils.registerPlexObject
 class Agent(PlexObject):
